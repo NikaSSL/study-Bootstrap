@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- table-striped table-hover table-bordered table-condensed -->
+	<table class="table table-hover">
+		<caption>Table</caption>
+		<thead>
+			<tr>
+				<th>th1</th>
+				<th>th2</th>			
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>td11</td>
+				<td>td12</td>
+			</tr>
+			<tr>
+				<td>td21</td>
+				<td>td22</td>
+			</tr>
+		</tbody>
+	</table>
+
+<!-- form-inline 内联表单 form-horizontal 水平表单 -->
+<!-- 常见表单控件 input textarea checkbox radio select -->
+	<form role="form">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" placeholder="please input name">
+		</div>
+		<div class="form-group">
+			<label for="inputfile">file input</label>
+			<p class="help-block">there is a explame of block class help words</p>
+		</div>
+		<!-- ***复选框和单选框可使用.checkbox-inline或.radio-inline控制其显示在同一行*** -->		
+		<!-- 复选框 -->
+		<div class="checkbox">
+			<label><input type="checkbox" value="" checked>选项1</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" value="">选项2</label>
+		</div>
+		<!-- End 复选框  -->
+		<!-- 单选框 -->
+		<div class="radio">
+			<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="">选项1</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" name="optionsRadios" id="optionsRadios2" value="">选项2</label>
+		</div>
+		<!-- End 单选框 -->
+		<button type="submit" class="btn btn-primary">submit</button>
+		<!-- ***选择框添加multiple属性可多选***   -->
+		<!-- 选择框 -->
+		<select >
+			<option>1</option>
+			<option>2</option>
+		</select>
+		<!-- End 选择框 -->
+		<p class="form-control-static">静态控件</p>
+		<!-- ***可使用.input-lg和.col-lg-*来设置表单的高度和宽度*** -->
+		<span class="help-block">input上可设置一个帮助文本</span>
+	</form>
+
+</body>
+</html>
