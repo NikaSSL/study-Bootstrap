@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-输入框</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+<body>
+<!--   1、输入框大小：可以通过向 .input-group 添加相对表单大小的 class（比如 .input-group-lg、input-group-sm、input-group-xs）来改变输入框组的大小。输入框中的内容会自动调整大小
+  2、前后缀用.input-group-addon包裹起来，内容用<span>包裹
+  3、输入框input记得添加.form-control
+  4、复选框和单选框可作为前后缀：可以把复选框和单选插件作为输入框组的前缀或者后缀元素
+  5、按钮作为前后缀：按钮则是用.input-group-btn替代.input-group-addon包裹
+  6、下拉菜单作为前后缀 -->
+  <form>
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="input-group input-group-sm" >
+          <span class="input-group-addon">
+            <input type="checkbox">
+            <input type="radio">
+          </span>
+          <input type="text" class="form-control" placeholder="预留文字">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">下拉选项1</a></li>
+              <li><a href="#">下拉选项2</a></li>
+              <li class="divider"></li>
+              <li><a href="#">下拉选项3</a></li>
+            </ul>
+          </div>
+        </div>         
+      </div>
+
+      <div class="col-lg-6">
+        <div class="input-group input-group-lg" >
+          <span class="input-group-addon">前缀</span>
+          <input type="text" class="form-control" placeholder="预留文字">
+          <span class="input-group-addon">后缀</span>
+        </div>       
+      </div>       
+    </div>
+  </form>
+
+	<!-- jQuery (Bootstrap 插件需要引入)  -->
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!-- 包含了所有编译插件 -->
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
