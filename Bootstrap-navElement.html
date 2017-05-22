@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-导航元素</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+<body>
+<!-- 
+  1、下拉菜单的两种风格.nav-tabs和.nav-pills(胶囊式)
+  2、垂直样式.nav-stacked
+  3、两端对齐nav-justified
+  4、禁用链接，添加disabled属性至<li>中
+  5、带下拉菜单的nav
+   -->
+  <ul class="nav nav-tabs nav-justified">
+    <li><a href="#">nav-1</a></li>
+    <li><a href="#">nav-2</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">下拉菜单<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li class="dropdown-header"></li>
+        <li><a href="#">下拉1</a></li>
+        <li class="divider"></li>
+        <li><a href="#">下拉2</a></li>
+      </ul>
+    </li>
+  </ul>
+
+	<!-- jQuery (Bootstrap 插件需要引入)  -->
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!-- 包含了所有编译插件 -->
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
