@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-分页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+<body>
+<!-- 
+  1、可以自定义链接，通过使用 .disabled 来定义不可点击的链接，通过使用 .active 来指示当前的页面;
+  2、使用.pagination-lg, .pagination-sm来获取不同大小的项;
+  3、&laquo <<,&raquo >>.
+   -->
+  <!-- 基础分页 -->
+  <ul class="pagination pagination-lg">
+    <li><a href="#">&laquo;</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li class="disabled"><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+  </ul>
+<!-- 
+  1、使用.previous把链接向左对齐，使用.next把链接向右对齐;
+  2、添加.disabled来获得一个颜色变淡的外观;
+  3、&larr 向左的箭头，&rarr 向右的箭头.
+   -->
+  <!-- 翻页 -->
+  <ul class="pager">
+    <li class="previous disabled"><a href="#">&larr;Previous</a></li>
+    <li class="next"><a href="#">Next&rarr;</a></li>
+  </ul>
+
+	<!-- jQuery (Bootstrap 插件需要引入)  -->
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!-- 包含了所有编译插件 -->
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
