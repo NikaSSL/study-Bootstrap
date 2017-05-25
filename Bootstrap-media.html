@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-多媒体对象</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+<body>
+<!-- 
+   Bootstrap 中的多媒体对象（Media Object）。这些抽象的对象样式用于创建各种类型的组件（比如：博客评论），我们可以在组件中使用图文混排，图像可以左对齐或者右对齐。媒体对象可以用更少的代码来实现媒体对象与文字的混排。
+    -->
+  <h1>基础的多媒体对象</h1>
+  <div class="media">
+    <a href="#" class="pull-left">
+      <img src="log.jpg" class="media-object" alt="媒体对象">
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading">媒体标题</h4>
+      这是一些示例文本。
+    </div>
+  </div>
+  <div class="media">
+    <a href="#" class="pull-left">
+      <img src="log.jpg" class="media-object" alt="媒体对象">
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading">媒体标题</h4>
+      这是一些示例文本。
+      <div class="media">
+        <a href="#" class="pull-left">
+          <img src="log.jpg" class="media-object" alt="媒体对象">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading">媒体标题</h4>
+          这是一些示例文本。
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <h1>列表形式的多媒体对象</h1>
+  <ul class="media-list">
+    <li class="media">
+      <a href="#" class="pull-left">
+        <img src="log.jpg" class="media-object">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">媒体标题1</h4>
+        这是一些示例文本。
+        <div class="media">
+          <a href="#" class="pull-left">
+            <img src="log.jpg" class="media-object">
+          </a>
+          <div class="media-bodying">
+            <h4 class="media-heading">媒体标题1.1</h4>
+            这是一些示例文本。
+          </div>
+        </div>        
+      </div>
+    </li>
+    <li class="media">
+      <a href="#" class="pull-left">
+        <img src="log.jpg" class="media-object">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">媒体标题2</h4>
+        这是一些示例文本。        
+      </div>
+    </li>
+  </ul>
+
+	<!-- jQuery (Bootstrap 插件需要引入)  -->
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!-- 包含了所有编译插件 -->
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
