@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-面板</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+<body>
+  <h2>创建模态框（Modal）</h2>
+  <!-- 按钮触发模态框 -->
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">开始演示模态框</button>
+  <!-- 模态框（Modal） -->
+  <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <!-- aria-hidden="true" 避免 屏幕识读设备抓取非故意的和可能产生混淆的输出内容 -->
+          <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+        </div>
+        <div class="modal-body">在这里添加一些文本</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">提交更改</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--   
+  方法如下：
+  1、Options: .modal(options) 把内容作为模态框激活，接受一个可选的选项对象
+  2、Toggle: .modal('toggle')手动切换模态框
+  3、Show: .modal('show')手动打开模态框
+  4、Hide: .modal('hide')手动隐藏模态框
+ -->
+  <h2>模态框（Modal）插件方法</h2>
+  <!-- 按钮触发模态框 -->
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">开始演示模态框</button>
+  <!-- 模态框（Modal） -->
+  <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+        </div>
+        <div class="modal-body">按下 ESC 按钮无法退出。（默认按下ESC按钮可以退出）</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">提交更改</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--   
+  事件如下：
+  1、show.bs.modal 在调用show方法后触发
+  2、shown.bs.modal 当模态框对用户可见时触发（将等待CSS过度效果完成）
+  3、hide.bs.modal 当调用hide实例方法时触发
+  4、hidden.bs.modal 当模态框完全对用户隐藏时触发
+ -->
+  <h2>模态框（Modal）插件事件</h2>
+  <!-- 按钮触发模态框 -->
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">开始演示模态框</button>
+  <!-- 模态框（Modal） -->
+  <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+        </div>
+        <div class="modal-body">点击关闭按钮检查事件功能。</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">提交更改</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+	<!-- jQuery (Bootstrap 插件需要引入)  -->
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!-- 包含了所有编译插件 -->
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script>
+    $(function(){
+      // Options: .modal(options)方法
+      $('#myModal2').modal({keyboard: false})
+      // Hide: .modal('hide')方法
+      $('#myModal3').modal('hide')
+      // hide.bs.modal事件
+      $('#myModal3').on('hide.bs.modal', function(){alert('嘿，我听说您喜欢模态框...');})
+  });
+
+ </script>
+</body>
+</html>
