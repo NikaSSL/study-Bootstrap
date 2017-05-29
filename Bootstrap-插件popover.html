@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-popover插件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 插件需要引入)  -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 包含了所有编译插件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+<body style="margin:100px;"> 
+  <!-- 
+    1、弹出框插件与提示工具类似，也非纯CSS插件，需要用JS激活，适用于<a>标签和<button>标签
+    2、data-content 为弹出框内容  titlr 为弹出框标题
+    3、选项：animation html placement selector title trigger delay container
+    4、方法：popover(options) popover('toggle') popover('show') popover('hide') popover('destroy')
+    5、事件：show.bs.popover shown.bs.popover hide.bs.popover hidden.bs.popover
+   -->
+  <a id="show" href="#" data-toggle="popover" title="title1-a" data-content="Content-a">a-popover</a>
+  <button type="buttom" data-toggle="popover" title="title2-btn" data-content="Content-btn" id="toggle">btn-popover</button>
+
+  <script>
+    //弹出框需要用JS激活
+    $(function(){$("a[data-toggle='popover']").popover();});
+    //弹出框的方法示范
+    $(function(){$('#toggle').popover('toggle')});
+    //shown.bs.popover 事件示范
+    $(function(){
+      $('#show').on('shown.bs.popover',function(){
+        alert('我显示啦~~');
+      });
+    });
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-alert插件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 插件需要引入)  -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 包含了所有编译插件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+<body style="margin:100px;"> 
+  <!--   
+    1、启用警告框的取消功能有两种方法：① 通过data属性；② 通过JS, $(".alert").alert()
+    2、选项：无
+    3、方法：.alert()让所有警告框都带有关闭功能 ;.alert('close') 关闭所有的警告框
+    4、事件：close.bs.alert closed.bs.alert
+   -->
+  <h3>警告框（Alert）插件 alert() 方法</h3>
+
+  <div id="myAlert" class="alert alert-success">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>成功！</strong>结果是成功的。
+  </div>
+  
+  <div id="myAlert" class="alert alert-warning">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>警告！</strong>您的网络连接有问题。
+  </div>
+
+  <script type="text/javascript">
+    //.alert('close')方法示范  <其本身好像存在一点问题>
+    $(function(){
+      $(".close").click(function(){
+        // alert(this.text);
+        // Q1 点击第一个的关闭按钮并没有关闭所有的警告框，点击第二个可以关闭所有警告框？
+        $("#myAlert").alert('close');
+    });});  
+    //事件closed.bs.alert 示范
+    $(function(){
+      $('div:nth-child(2)').bind('closed.bs.alert',function(){
+        alert('警告消息框已被关闭!');
+      })
+    });
+  </script> 
+
+</body>
+</html>

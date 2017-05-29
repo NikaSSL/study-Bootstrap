@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-tab插件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 插件需要引入)  -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 包含了所有编译插件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+<body style="margin:0px 40px;"> 
+  <!-- 
+  1、Tooltip非纯CSS插件，需要用JS激活，所以必须调用$("[data-toggle='tooltip']").tooltip()
+  2、选项：animation html palcement selector title content dalay container
+  3、方法：.tooltip(options) .tooltip('toggle') tooltip('show') tooltip('hide') tooltip('destory')
+  4、事件：show.bs.tooltip shown.bs.tooltip hide.bs.tooltip hidden.bs.tooltip
+   -->
+  <h1>基础的Tooltip示范</h1>
+  <div id="base">
+    <h4>提示工具（Tooltip）插件 - 锚</h4>
+    这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip" title="默认的 Tooltip">默认的 Tooltip</a>.
+    这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip" data-placement="left" title="左侧的 Tooltip">左侧的 Tooltip</a>.
+    这是一个 <a href="#" data-toggle="tooltip" data-placement="top" title="顶部的 Tooltip">顶部的 Tooltip</a>.
+    这是一个 <a href="#" data-toggle="tooltip" data-placement="bottom" title="底部的 Tooltip">底部的 Tooltip</a>.
+    这是一个 <a href="#" data-toggle="tooltip" data-placement="right" title="右侧的 Tooltip">右侧的 Tooltip</a>
+    <br>
+
+    <h4>提示工具（Tooltip）插件 - 按钮</h4>
+    <button type="button" class="btn btn-default" data-toggle="tooltip" title="默认的 Tooltip">默认的 Tooltip</button>
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="左侧的 Tooltip">左侧的 Tooltip</button>
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="顶部的 Tooltip">顶部的 Tooltip</button>
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="底部的 Tooltip">底部的 Tooltip</button>
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="右侧的 Tooltip">右侧的 Tooltip</button>
+  </div>
+  <h1>Tooltip的方法示范</h1>
+  <div>
+    这是一个 <a href="#" class="tooltip-show" data-toggle="tooltip" title="show">Tooltip 方法 show </a>.
+    这是一个 <a href="#" class="tooltip-hide" data-toggle="tooltip" data-placement="left" title="hide">Tooltip 方法 hide</a>.
+    这是一个 <a href="#" class="tooltip-destroy" data-toggle="tooltip" data-placement="top" title="destroy">Tooltip 方法 destroy</a>.
+    这是一个 <a href="#" class="tooltip-toggle" data-toggle="tooltip" data-placement="bottom" title="toggle">Tooltip 方法 toggle</a>.   
+    <br><br><br><br><br><br>
+     <p class="tooltip-options" >这是一个 <a href="#" data-toggle="tooltip" title="<h2>'am Header2</h2>">Tooltip 方法 options </a>. </p>
+  <div>
+  <h1>Tooltip的事件示范</h1>
+  <h4>提示工具（Tooltip）插件 - 锚</h4>
+  这是一个 <a id="event-example" href="#" class="tooltip-show" data-toggle="tooltip" title="默认的 Tooltip">默认的 Tooltip</a>.
+
+  <script>
+    //激活base中的Tooltip插件
+    $(function () { $("#base [data-toggle='tooltip']").tooltip(); });
+    // Tooltip的五种方法
+    $(function () { $('.tooltip-show').tooltip('show');});
+    $(function () { $('.tooltip-hide').tooltip('hide');});
+    $(function () { $('.tooltip-destroy').tooltip('destroy');});
+    $(function () { $('.tooltip-toggle').tooltip('toggle');});
+    $(function () { $(".tooltip-options a").tooltip({html : true });});
+    //Tooltip的show.bs.tooltip 事件示范
+    $(function () { $('#event-example').on('show.bs.tooltip', function () {alert("Alert message on show");})});    
+  </script>
+</body>
+</html>

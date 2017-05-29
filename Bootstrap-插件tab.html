@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-tab插件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+<body> 
+<!-- 
+  1、用法：添加data-toggle="tab"或data-toggle="pill"到<a>中;添加nav和nav-tabs类 或 nav-pill 到ul中
+  2、.fade产生淡入淡出效果，第一个标签必须加.in，否则不会显示初始内容
+  3、方法：.$().tab 该方法用于激活标签页元素和内容容器
+  4、事件：① shouw.bs.tab 该事件在标签页显示时触发；② shown.bs.tab 该事件在标签页显示时触发，以上两种事件都需要分别使用event.target和event.relatedTarget来定位到激活的标签页和前一个标签页
+ -->
+  <ul id="myTab" class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">W</a></li>
+    <li><a href="#tab2" data-toggle="tab">S</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">下拉<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#dropdown-1" data-toggle="tab">dropdown-1</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="tab1">tab1...........</div>
+    <div class="tab-pane fade" id="tab2">tab2............</div>
+    <div class="tab-pane fade" id="dropdown-1">dropdown-1...........</div>
+  </div>
+
+
+	<!-- jQuery (Bootstrap 插件需要引入)  -->
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!-- 包含了所有编译插件 -->
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script>
+   $(function () {
+       //$().tab方法的示范
+      $('#myTab li:eq(1) a').tab('show');
+
+      //shown.bs.tab 事件的示范
+      $('a[data-toggle="tab"]').on('shown.bs.tab',function(e){
+        //获取已激活的标签页的名称
+        var activeTab=$(e.target).text();
+        //获取前一个激活的标签页名称
+        var previousTab = $(e.relatedTarget).text(); 
+        $(".active-tab span").html(activeTab);
+        $(".previous-tab span").html(previousTab);
+      })
+   });
+  </script>
+</body>
+</html>
