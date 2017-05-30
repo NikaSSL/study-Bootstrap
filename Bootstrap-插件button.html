@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-button插件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 插件需要引入)  -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 包含了所有编译插件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+<body style="margin:100px;"> 
+<!--   
+  1、用法：可通过JS启用button插件，$('.btn').button()
+  2、选项：无
+  3、方法：.button('toggle') .button('loading') .button('reset') .button(sting)
+ -->
+ 
+  <!-- data-loading-text="加载时自定义文字" -->
+  <button id="fat-btn" class="btn btn-primary" data-loading-text="loading..." type="button">加载状态</button>
+  
+  <!-- 普通按钮 data-toggle="button" -->
+  <button class="btn btn-primary" data-toggle="button">单个切换</button>
+
+  <!-- 复选按钮 data-toggle="buttons" -->
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+      <input type="checkbox">选项1
+    </label>
+    <label class="btn btn-primary">
+      <input type="checkbox">选项2
+    </label>
+    <label class="btn btn-primary">
+      <input type="checkbox">选项3
+    </label>        
+  </div>
+  
+  <!-- 单选按钮 data-toggle="buttons" -->
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+      <input type="radio" name="options" id="opt1">选项1
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" name="options" id="opt2">选项2
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" name="options" id="opt3">选项3
+    </label>
+  </div>
+  
+  <button class="btn btn-primary" type="button" id="btn2" data-haha-text="haha">点击我</button>
+
+  <script type="text/javascript">
+  $(function(){
+    $('#fat-btn').click(function(){
+      $(this).button('loading').delay(1000).queue(function(){
+        $(this).button('reset');
+      })
+    })
+  });
+
+  //.button(string)方法的示范
+  //JS中调用.button('xx'),且需要在对应的btn中添加相应的 data-xx.text="..."
+  $(function(){
+    $('#btn2').click(function(){
+      $(this).button('haha');
+    })
+  });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap-carousel插件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 插件需要引入)  -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 包含了所有编译插件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+<body style="margin:100px;">
+<!-- 
+  1、.carousel-caption 为可选标题；.carousel-indicators 为轮播指标 .carousel-inner 为轮播项目 .carousel-control 为轮播导航 data-slide 接受关键字prev或next,来改变幻灯片相对于当前位置的位置
+  2、选项：interval pause wrap
+  3、方法：.carousel(options) .carousel('cycle') .carousel('pause') .carousel(number) .carousel('prev') .carousel('next')
+  4、事件：slide.bs.carousel 当调用slide实例方法时立即出发该事件；slid.bs.carousel 当轮播完成幻灯片过度效果时触发该事件
+ -->
+  <!-- 基础的轮播示范 -->
+  <div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）指标 -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>   
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="log.jpg" alt="First slide">
+        <div class="carousel-caption">可选标题——标题1</div>
+      </div>
+      <div class="item">
+        <img src="log.jpg" alt="Second slide">
+      </div>
+      <div class="item">
+        <img src="log.jpg" alt="Third slide">
+      </div>
+    </div>
+    <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left" href="#myCarousel" 
+    data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" 
+    data-slide="next">&rsaquo;</a>
+  </div>
+
+  <!-- 轮播的方法示范 -->
+  <div id="myCarousel2" class="carousel slide">
+
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel2" data-slide-to="0" 
+         class="active"></li>
+      <li data-target="#myCarousel2" data-slide-to="1"></li>
+      <li data-target="#myCarousel2" data-slide-to="2"></li>
+   </ol>   
+   
+   <div class="carousel-inner">
+      <div class="item active">
+         <img src="log.jpg" alt="First slide">1
+      </div>
+      <div class="item">
+         <img src="log.jpg" alt="Second slide">2
+      </div>
+      <div class="item">
+         <img src="log.jpg" alt="Third slide">3
+      </div>
+   </div>
+  
+   <a class="carousel-control left" href="#myCarousel2" 
+      data-slide="prev">&lsaquo;</a>
+   <a class="carousel-control right" href="#myCarousel2" 
+      data-slide="next">&rsaquo;</a>
+   <!-- 控制按钮 -->
+   <div style="text-align:center;">
+      <input type="button" class="btn start-slide" value="Start">
+      <input type="button" class="btn pause-slide" value="Pause">
+      <input type="button" class="btn prev-slide" value="Previous Slide">
+      <input type="button" class="btn next-slide" value="Next Slide">
+      <input type="button" class="btn slide-one" value="Slide 1">
+      <input type="button" class="btn slide-two" value="Slide 2">
+      <input type="button" class="btn slide-three" value="Slide 3">
+   </div>
+   </div> 
+   <script>
+   $(function(){
+      // 初始化轮播
+      $(".start-slide").click(function(){
+         $("#myCarousel2").carousel('cycle');
+      });
+      // 停止轮播
+      $(".pause-slide").click(function(){
+         $("#myCarousel2").carousel('pause');
+      });
+      // 循环轮播到上一个项目
+      $(".prev-slide").click(function(){
+         $("#myCarousel2").carousel('prev');
+      });
+      // 循环轮播到下一个项目
+      $(".next-slide").click(function(){
+         $("#myCarousel2").carousel('next');
+      });
+      // 循环轮播到某个特定的帧 
+      $(".slide-one").click(function(){
+         $("#myCarousel2").carousel(0);
+      });
+      $(".slide-two").click(function(){
+         $("#myCarousel2").carousel(1);
+      });
+      $(".slide-three").click(function(){
+         $("#myCarousel2").carousel(2);
+      });
+   });
+   </script>
+
+
+</body>
+</html>
